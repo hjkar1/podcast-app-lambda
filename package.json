@@ -15,16 +15,14 @@
     "rss-parser": "^3.7.1"
   },
   "scripts": {
-    "start": "npm-run-all --parallel start:app start:server",
-    "start:app": "react-scripts start",
-    "start:server": "netlify-lambda serve functions",
-    "build": "npm-run-all --parallel build:**",
+    "start": "react-scripts start",
+    "start:lambda": "netlify-lambda serve src/functions",
+    "build": "run-p build:**",
     "build:app": "react-scripts build",
-    "build:functions": "netlify-lambda build functions",
+    "build:lambda": "netlify-lambda build src/functions",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --fix .",
-    "prod": "npm run build; npm run build:lambda"
+    "lint": "eslint --fix ."
   },
   "eslintConfig": {
     "extends": "react-app"
