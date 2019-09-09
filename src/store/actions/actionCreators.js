@@ -3,8 +3,8 @@ import * as actionTypes from './actionTypes';
 export const searchPodcasts = terms => async dispatch => {
   dispatch(searchPodcastsStart());
   const searchUrl = `https://itunes.apple.com/search?media=podcast&term=${terms}`;
-  const result = await fetch(searchUrl);
   try {
+    const result = await fetch(searchUrl);
     const json = await result.json();
     const podcasts = json.results;
     dispatch(searchPodcastsSuccess(podcasts));
