@@ -62,6 +62,7 @@ const SearchBar = ({
       </div>
       <form onSubmit={handleSearchSubmit}>
         <InputBase
+          id="search"
           placeholder="Search"
           classes={{
             root: classes.inputRoot,
