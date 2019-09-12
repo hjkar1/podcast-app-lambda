@@ -2,7 +2,6 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import '@testing-library/jest-dom/extend-expect';
 import { render, wait } from '@testing-library/react';
 import Podcast from './Podcast';
 import searchReducer from '../store/reducers/searchReducer';
@@ -38,7 +37,7 @@ const mockFeed = {
 // Mock podcast id URL parameter that matches the one in the store.
 const mockId = { params: { podcastId: 'test' } };
 
-it('displays the feed', async () => {
+test('displays the feed', async () => {
   fetch.mockResponseOnce(JSON.stringify(mockFeed));
   const { container } = render(
     <Provider store={store}>

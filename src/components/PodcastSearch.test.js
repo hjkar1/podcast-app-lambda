@@ -2,7 +2,6 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent, wait } from '@testing-library/react';
 import PodcastSearch from './PodcastSearch';
 import searchReducer from '../store/reducers/searchReducer';
@@ -28,7 +27,7 @@ const mockSearchResult = {
   results: [{ trackId: 0, trackName: 'Testing' }]
 };
 
-it('displays search result', async () => {
+test('displays search result', async () => {
   fetch.mockResponseOnce(JSON.stringify(mockSearchResult));
   const { container } = render(
     <Provider store={store}>
