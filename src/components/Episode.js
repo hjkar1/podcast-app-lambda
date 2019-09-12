@@ -26,7 +26,8 @@ const styles = theme => ({
   }
 });
 
-class Episode extends Component {
+// Use named export for unconnected component (for unit testing).
+export class Episode extends Component {
   render() {
     if (!this.props.episode) {
       return null;
