@@ -28,7 +28,7 @@ const mockSearchResult = {
   results: [{ trackId: 0, trackName: 'Testing' }]
 };
 
-it('display search result', async () => {
+it('displays search result', async () => {
   fetch.mockResponseOnce(JSON.stringify(mockSearchResult));
   const { container } = render(
     <Provider store={store}>
