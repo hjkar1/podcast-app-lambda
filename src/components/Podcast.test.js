@@ -8,7 +8,7 @@ import searchReducer from '../store/reducers/searchReducer';
 import feedReducer from '../store/reducers/feedReducer';
 
 // Use BrowserRouter to prevent errors caused by the usage of NavLink
-// in the tested component outside of its normal context.
+// outside of its normal context.
 import { BrowserRouter } from 'react-router-dom';
 
 /*
