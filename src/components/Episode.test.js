@@ -6,8 +6,11 @@ import { Episode } from './Episode';
 // in the tested component outside of its normal context.
 import { BrowserRouter } from 'react-router-dom';
 
+/* Unit tests for Episode component. */
+
 describe('<Episode />', () => {
-  // Mock Material-UI classes (HOC -> not included in the export used in this test).
+  // Mock Material-UI classes prop
+  // (the real one not available in the plain component (without HOC) used in tests).
   const mockClasses = {
     episodeContainer: {},
     episodeTitle: {},
@@ -23,22 +26,22 @@ describe('<Episode />', () => {
     enclosure: { url: 'url' }
   };
 
-  let component;
-
-  beforeEach(() => {
-    component = render(
+  test('renders the episode title', () => {
+    const component = render(
       <BrowserRouter>
         <Episode classes={mockClasses} episode={mockEpisode} />
       </BrowserRouter>
     );
-  });
-
-  test('renders the episode title', () => {
     const element = component.getByText('title');
     expect(element).toBeDefined();
   });
 
   test('renders the episode content', () => {
+    const component = render(
+      <BrowserRouter>
+        <Episode classes={mockClasses} episode={mockEpisode} />
+      </BrowserRouter>
+    );
     const element = component.getByText('content');
     expect(element).toBeDefined();
   });
