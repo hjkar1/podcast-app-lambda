@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import SearchBar from './SearchBar';
 
-/* Unit test for the search bar. */
+/* Unit test for the search bar component. */
 
 // A helper component that renders the tested component
 // and keeps the text entered to the tested component in its state.
@@ -26,10 +26,12 @@ test('forwards the entered search term to parent component', () => {
     value: ''
   };
 
-  const component = render(<Wrapper onSubmit={onSubmit} state={state} />);
+  const { getByPlaceholderText, getByRole } = render(
+    <Wrapper onSubmit={onSubmit} state={state} />
+  );
 
-  const input = component.container.querySelector('input');
-  const form = component.container.querySelector('form');
+  const input = getByPlaceholderText('Search');
+  const form = getByRole('form');
 
   fireEvent.change(input, {
     target: { value: 'testing' }
