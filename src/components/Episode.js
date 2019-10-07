@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import withStyles from '@material-ui/core/styles/withStyles';
 import TopNavBar from './ui/TopNavBar';
+import PropTypes from 'prop-types';
 
 const styles = theme => ({
   episodeContainer: {
@@ -64,6 +65,11 @@ export class Episode extends Component {
     );
   }
 }
+
+Episode.propTypes = {
+  episode: PropTypes.object,
+  classes: PropTypes.object
+};
 
 const mapStateToProps = (
   {

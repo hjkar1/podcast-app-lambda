@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/core/styles';
 import { NavLink } from 'react-router-dom';
 import Link from '@material-ui/core/Link';
+import PropTypes from 'prop-types';
 
 const styles = theme => ({
   root: {
@@ -58,5 +59,10 @@ class TopNavBar extends Component {
     );
   }
 }
+
+TopNavBar.propTypes = {
+  children: PropTypes.node,
+  classes: PropTypes.object
+};
 
 export default withStyles(styles)(TopNavBar);

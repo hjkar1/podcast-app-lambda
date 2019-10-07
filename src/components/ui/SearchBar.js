@@ -3,6 +3,7 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
+import PropTypes from 'prop-types';
 
 const styles = theme => ({
   search: {
@@ -72,5 +73,12 @@ const SearchBar = ({
     </div>
   </Fragment>
 );
+
+SearchBar.propTypes = {
+  searchTerms: PropTypes.string,
+  handleChange: PropTypes.func,
+  handleSearchSubmit: PropTypes.func,
+  classes: PropTypes.object
+};
 
 export default withStyles(styles)(SearchBar);
