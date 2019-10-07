@@ -4,7 +4,7 @@ const initialState = {
   selectedPodcast: null,
   selectedFeed: null,
   loading: false,
-  error: false
+  error: null
 };
 
 const feedReducer = (state = initialState, action) => {
