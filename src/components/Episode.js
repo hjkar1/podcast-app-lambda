@@ -5,24 +5,24 @@ import TopNavBar from './ui/TopNavBar';
 
 const styles = theme => ({
   episodeContainer: {
-    margin: theme.spacing.unit
+    margin: theme.spacing(1)
   },
   episodeTitle: {
-    margin: theme.spacing.unit * 2
+    margin: theme.spacing(2)
   },
   image: {
     maxWidth: '300px',
     maxHeight: '300px',
     width: 'auto',
     height: 'auto',
-    margin: theme.spacing.unit
+    margin: theme.spacing(1)
   },
   player: {
-    margin: theme.spacing.unit * 2
+    margin: theme.spacing(2)
   },
   description: {
     lineHeight: '1.5',
-    margin: theme.spacing.unit * 2
+    margin: theme.spacing(2)
   }
 });
 

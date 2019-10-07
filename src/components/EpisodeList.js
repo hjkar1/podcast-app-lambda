@@ -5,11 +5,11 @@ import withStyles from '@material-ui/core/styles/withStyles';
 
 const styles = theme => ({
   listContainer: {
-    margin: theme.spacing.unit * 2
+    margin: theme.spacing(2)
   },
   episodeLink: {
     display: 'block',
-    margin: theme.spacing.unit
+    margin: theme.spacing(1)
   }
 });
 

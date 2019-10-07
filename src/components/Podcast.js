@@ -8,18 +8,18 @@ import Spinner from './ui/Spinner';
 
 const styles = theme => ({
   podcastContainer: {
-    margin: theme.spacing.unit
+    margin: theme.spacing(1)
   },
   podcastName: {
-    margin: theme.spacing.unit * 2
+    margin: theme.spacing(2)
   },
   image: {
     width: 'auto',
     height: 'auto',
-    margin: theme.spacing.unit
+    margin: theme.spacing(1)
   },
   error: {
-    margin: theme.spacing.unit * 2
+    margin: theme.spacing(2)
   }
 });
 

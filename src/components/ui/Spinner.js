@@ -6,7 +6,7 @@ const styles = theme => ({
   spinnerContainer: {
     display: 'flex',
     justifyContent: 'center',
-    marginTop: theme.spacing.unit * 10
+    marginTop: theme.spacing(10)
   }
 });
 

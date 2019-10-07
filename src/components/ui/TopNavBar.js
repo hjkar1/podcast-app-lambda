@@ -8,12 +8,12 @@ import Link from '@material-ui/core/Link';
 const styles = theme => ({
   root: {
     width: '100%',
-    marginBottom: theme.spacing.unit * 2
+    marginBottom: theme.spacing(2)
   },
   navLink: {
     color: 'inherit',
-    marginRight: theme.spacing.unit * 2,
-    marginLeft: theme.spacing.unit * 2
+    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(2)
   },
   grow: {
     flexGrow: 1
@@ -36,7 +36,7 @@ class TopNavBar extends Component {
         activeClassName={classes.active}
         underline="none"
         color="inherit"
-        variant="title"
+        variant="h6"
         component={NavLink}
         to="/"
         exact
