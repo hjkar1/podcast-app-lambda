@@ -1,24 +1,10 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, mockClasses } from 'utils/unit-test-utils';
 import { Episode } from './Episode';
-
-// Use BrowserRouter to prevent errors caused by the usage of NavLink
-// in the tested component outside of its normal context.
-import { BrowserRouter } from 'react-router-dom';
 
 /* Unit tests for Episode component. */
 
 describe('<Episode />', () => {
-  // Mock Material-UI classes prop
-  // (the real one not available in the plain component (without HOC) used in tests).
-  const mockClasses = {
-    episodeContainer: {},
-    episodeTitle: {},
-    image: {},
-    player: {},
-    description: {}
-  };
-
   const mockEpisode = {
     title: 'title',
     content: 'content',
@@ -27,22 +13,18 @@ describe('<Episode />', () => {
   };
 
   test('renders the episode title', () => {
-    const component = render(
-      <BrowserRouter>
-        <Episode classes={mockClasses} episode={mockEpisode} />
-      </BrowserRouter>
+    const { getByText } = render(
+      <Episode classes={mockClasses} episode={mockEpisode} />
     );
-    const element = component.getByText('title');
+    const element = getByText('title');
     expect(element).toBeDefined();
   });
 
   test('renders the episode content', () => {
-    const component = render(
-      <BrowserRouter>
-        <Episode classes={mockClasses} episode={mockEpisode} />
-      </BrowserRouter>
+    const { getByText } = render(
+      <Episode classes={mockClasses} episode={mockEpisode} />
     );
-    const element = component.getByText('content');
+    const element = getByText('content');
     expect(element).toBeDefined();
   });
 
@@ -53,12 +35,10 @@ describe('<Episode />', () => {
       itunes: { image: 'image' },
       enclosure: { url: 'url' }
     };
-    const componentWithHTMLTags = render(
-      <BrowserRouter>
-        <Episode classes={mockClasses} episode={mockEpisodeWithHTMLTags} />
-      </BrowserRouter>
+    const { getByText } = render(
+      <Episode classes={mockClasses} episode={mockEpisodeWithHTMLTags} />
     );
-    const element = componentWithHTMLTags.getByText('Some test content');
+    const element = getByText('Some test content');
     expect(element).toBeDefined();
   });
 });
