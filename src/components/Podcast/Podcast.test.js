@@ -23,9 +23,10 @@ const mockId = { params: { podcastId: 'test' } };
 
 test('displays the feed', async () => {
   fetch.mockResponseOnce(JSON.stringify(mockFeed));
-  const { container } = render(<Podcast match={mockId} />);
+  const { getByText } = render(<Podcast match={mockId} />);
 
   await wait(() => {
-    expect(container).toHaveTextContent('Testing');
+    element = getByText('Testing');
+    expect(element).toBeDefined();
   });
 });
