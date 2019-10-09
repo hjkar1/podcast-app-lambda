@@ -30,8 +30,8 @@ const PodcastList = ({ podcasts, classes }) => (
 );
 
 PodcastList.propTypes = {
-  podcasts: PropTypes.array,
-  classes: PropTypes.object
+  podcasts: PropTypes.array.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(PodcastList);
