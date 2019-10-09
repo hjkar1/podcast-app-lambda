@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { searchPodcasts } from '../store/actions/actionCreators';
-import TopNavBar from './ui/TopNavBar';
-import SearchBar from './ui/SearchBar';
-import PodcastList from './PodcastList';
-import Spinner from './ui/Spinner';
+import { searchPodcasts } from '../../store/actions/actionCreators';
+import TopNavBar from '../ui/TopNavBar';
+import SearchBar from '../ui/SearchBar';
+import PodcastList from '../PodcastList/PodcastList';
+import Spinner from '../ui/Spinner';
 
 class PodcastSearch extends Component {
   state = {
@@ -60,11 +60,10 @@ class PodcastSearch extends Component {
 }
 
 PodcastSearch.propTypes = {
-  searchPodcasts: PropTypes.func,
+  searchPodcasts: PropTypes.func.isRequired,
   loading: PropTypes.bool,
   error: PropTypes.string,
-  podcasts: PropTypes.array,
-  classes: PropTypes.object
+  podcasts: PropTypes.array
 };
 
 const mapStateToProps = ({ search: { searchResult, loading, error } }) => ({
