@@ -13,7 +13,7 @@ const Wrapper = props => {
 
   return (
     <SearchBar
-      value={props.state.value}
+      searchTerms={props.state.value}
       handleSearchSubmit={props.onSubmit}
       handleChange={onChange}
     />
