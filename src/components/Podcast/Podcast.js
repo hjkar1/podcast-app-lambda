@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import withStyles from '@material-ui/core/styles/withStyles';
-import { getFeed } from '../store/actions/actionCreators';
-import TopNavBar from './ui/TopNavBar';
-import EpisodeList from './EpisodeList';
-import Spinner from './ui/Spinner';
+import { getFeed } from '../../store/actions/actionCreators';
+import TopNavBar from '../ui/TopNavBar';
+import EpisodeList from '../EpisodeList/EpisodeList';
+import Spinner from '../ui/Spinner';
 import PropTypes from 'prop-types';
 
 const styles = theme => ({
@@ -87,13 +87,13 @@ class Podcast extends Component {
 
 Podcast.propTypes = {
   selectedPodcast: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  getFeed: PropTypes.func,
+  getFeed: PropTypes.func.isRequired,
   loading: PropTypes.bool,
   error: PropTypes.string,
-  match: PropTypes.object,
+  match: PropTypes.object.isRequired,
   episodes: PropTypes.array,
   podcast: PropTypes.object,
-  classes: PropTypes.object
+  classes: PropTypes.object.isRequired
 };
 
 const getPodcast = (podcastId, podcasts) => {
