@@ -75,10 +75,10 @@ const SearchBar = ({
 );
 
 SearchBar.propTypes = {
-  searchTerms: PropTypes.string,
-  handleChange: PropTypes.func,
-  handleSearchSubmit: PropTypes.func,
-  classes: PropTypes.object
+  searchTerms: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleSearchSubmit: PropTypes.func.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(SearchBar);

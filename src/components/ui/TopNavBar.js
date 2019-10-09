@@ -62,7 +62,7 @@ class TopNavBar extends Component {
 
 TopNavBar.propTypes = {
   children: PropTypes.node,
-  classes: PropTypes.object
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(TopNavBar);
