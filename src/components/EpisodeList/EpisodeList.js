@@ -17,6 +17,7 @@ const styles = theme => ({
 const EpisodeList = ({ episodes, podcastId, classes }) => (
   <div className={classes.listContainer}>
     {episodes.map((episode, index) => (
+      /* The index is used as episode number/id so it is also used as key. */
       <div key={index} className={classes.episodeLink}>
         <Link to={`/podcasts/${podcastId}/${index}`} component={RouterLink}>
           {episode.title}
@@ -27,9 +28,9 @@ const EpisodeList = ({ episodes, podcastId, classes }) => (
 );
 
 EpisodeList.propTypes = {
-  episodes: PropTypes.array,
-  podcastId: PropTypes.string,
-  classes: PropTypes.object
+  episodes: PropTypes.array.isRequired,
+  podcastId: PropTypes.string.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(EpisodeList);
