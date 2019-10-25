@@ -12,8 +12,8 @@ const styles = theme => ({
     margin: theme.spacing(2)
   },
   image: {
-    maxWidth: '300px',
-    maxHeight: '300px',
+    maxWidth: '200px',
+    maxHeight: '200px',
     width: 'auto',
     height: 'auto',
     margin: theme.spacing(1)
