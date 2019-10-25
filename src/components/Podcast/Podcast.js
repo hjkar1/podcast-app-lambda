@@ -55,30 +55,32 @@ class Podcast extends Component {
       classes
     } = this.props;
 
-    if (loading) {
-      return <Spinner />;
-    }
+    let pageContent = 'No episodes found :(';
 
-    const podcastLogo = podcast.artworkUrl100 ? (
-      <img
-        src={podcast.artworkUrl100}
-        alt="Podcast logo"
-        className={classes.image}
-      />
-    ) : null;
+    if (loading) {
+      pageContent = <Spinner />;
+    } else if (episodes) {
+      const podcastLogo = podcast.artworkUrl100 ? (
+        <img
+          src={podcast.artworkUrl100}
+          alt="Podcast logo"
+          className={classes.image}
+        />
+      ) : null;
+
+      pageContent = (
+        <div className={classes.podcastContainer}>
+          <h1 className={classes.podcastName}>{podcast.trackName}</h1>
+          {podcastLogo}
+          <EpisodeList episodes={episodes} podcastId={podcastId} />
+        </div>
+      );
+    }
 
     return (
       <Fragment>
         <TopNavBar />
-        {episodes ? (
-          <div className={classes.podcastContainer}>
-            <h1 className={classes.podcastName}>{podcast.trackName}</h1>
-            {podcastLogo}
-            <EpisodeList episodes={episodes} podcastId={podcastId} />
-          </div>
-        ) : (
-          'No episodes found :('
-        )}
+        {pageContent}
         <div className={classes.error}>{error}</div>
       </Fragment>
     );
