@@ -12,7 +12,7 @@ const styles = theme => ({
 
 const Spinner = ({ classes }) => (
   <div className={classes.spinnerContainer}>
-    <CircularProgress size={50} thickness={5} />
+    <CircularProgress size={50} thickness={5} data-testid="spinner" />
   </div>
 );
 
