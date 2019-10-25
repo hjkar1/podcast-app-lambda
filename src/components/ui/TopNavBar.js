@@ -42,7 +42,7 @@ class TopNavBar extends Component {
         to="/"
         exact
       >
-        Search podcasts from iTunes
+        Search podcasts
       </Link>
     );
 
