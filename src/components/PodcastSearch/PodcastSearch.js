@@ -7,7 +7,8 @@ import SearchBar from '../ui/SearchBar';
 import PodcastList from '../PodcastList/PodcastList';
 import Spinner from '../ui/Spinner';
 
-class PodcastSearch extends Component {
+// Use named export for unconnected component (for unit testing).
+export class PodcastSearch extends Component {
   state = {
     searchTerms: '',
     searchSubmitted: false

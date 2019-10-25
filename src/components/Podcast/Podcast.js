@@ -24,7 +24,8 @@ const styles = theme => ({
   }
 });
 
-class Podcast extends Component {
+// Use named export for unconnected component (for unit testing).
+export class Podcast extends Component {
   componentDidMount() {
     const {
       selectedPodcast,
