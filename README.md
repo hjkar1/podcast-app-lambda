@@ -1,3 +1,39 @@
+# podcast-app-lambda
+A simple podcast player app that enables searching podcasts from iTunes and playing the episodes.
+
+The podcast search uses [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/).
+
+The podcast rss feed fetching and parsing is done using a serverless AWS lambda function via [Netlify](https://docs.netlify.com/functions/overview/).
+
+## Prerequisites
+You need to have npm and Node.js installed to run this app on your computer.
+
+## Installing
+Clone the project and install dependencies:
+```
+git clone https://github.com/hjkar1/podcast-app-lambda
+cd podcast-app-lambda
+npm install
+```
+
+## Deploying to Netlify
+You need a Netlify account to deploy this app.
+
+Deploying with [Netlify CLI](https://docs.netlify.com/cli/get-started/):
+
+1. Install Netlify CLI.
+2. Build the app with `npm run build`.
+3. Use `netlify login` to authenticate.
+4. Run `netlify deploy --prod` in the project root folder. 
+
+## Tests
+The app includes unit and integration tests for React components.
+
+## Using ESLint
+Use `npm run lint` to run ESLint.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
