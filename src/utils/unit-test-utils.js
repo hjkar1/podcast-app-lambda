@@ -42,3 +42,28 @@ export const mockClasses = {
   error: {},
   podcastLink: {}
 };
+
+// Mock episodes.
+export const mockEpisodes = [
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' },
+  { title: 'Testing' }
+];
