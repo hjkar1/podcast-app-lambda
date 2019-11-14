@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import withStyles from '@material-ui/core/styles/withStyles';
+import Button from '@material-ui/core/Button';
 import { getFeed } from '../../store/actions/actionCreators';
 import TopNavBar from '../ui/TopNavBar';
 import EpisodeList from '../EpisodeList/EpisodeList';
@@ -19,6 +20,9 @@ const styles = theme => ({
     height: 'auto',
     margin: theme.spacing(1)
   },
+  showMoreButton: {
+    marginTop: theme.spacing(2)
+  },
   error: {
     margin: theme.spacing(2)
   }
@@ -26,6 +30,8 @@ const styles = theme => ({
 
 // Use named export for unconnected component (for unit testing).
 export class Podcast extends Component {
+  state = { currentPage: 1, episodesPerPage: 20 };
+
   componentDidMount() {
     const {
       selectedPodcast,
@@ -44,6 +50,13 @@ export class Podcast extends Component {
     }
   }
 
+  // Increase the amount of displayed episodes.
+  handleShowMore = () => {
+    const { currentPage } = this.state;
+    const newPage = currentPage + 1;
+    this.setState({ currentPage: newPage });
+  };
+
   render() {
     const {
       loading,
@@ -56,11 +69,24 @@ export class Podcast extends Component {
       classes
     } = this.props;
 
+    const { currentPage, episodesPerPage } = this.state;
+
     let pageContent = 'No episodes found :(';
 
     if (loading) {
       pageContent = <Spinner />;
     } else if (episodes) {
+      // "Show more" button is displayed only if there is more episodes to show.
+      const showMoreButton =
+        currentPage * episodesPerPage < episodes.length ? (
+          <Button
+            className={classes.showMoreButton}
+            onClick={this.handleShowMore}
+          >
+            Show more
+          </Button>
+        ) : null;
+
       const podcastLogo = podcast.artworkUrl100 ? (
         <img
           src={podcast.artworkUrl100}
@@ -73,7 +99,11 @@ export class Podcast extends Component {
         <div className={classes.podcastContainer}>
           <h1 className={classes.podcastName}>{podcast.trackName}</h1>
           {podcastLogo}
-          <EpisodeList episodes={episodes} podcastId={podcastId} />
+          <EpisodeList
+            episodes={episodes.slice(0, currentPage * episodesPerPage)}
+            podcastId={podcastId}
+          />
+          {showMoreButton}
         </div>
       );
     }
