@@ -23,7 +23,11 @@ const styles = theme => ({
   },
   description: {
     lineHeight: '1.5',
-    margin: theme.spacing(2)
+    margin: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+      width: '50%',
+      margin: 'auto'
+    }
   }
 });
 
