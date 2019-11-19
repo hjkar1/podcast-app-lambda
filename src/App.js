@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import './App.css';
 import PodcastSearch from './components/PodcastSearch/PodcastSearch';
 import Episode from './components/Episode/Episode';
 import Podcast from './components/Podcast/Podcast';
