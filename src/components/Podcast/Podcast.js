@@ -82,6 +82,7 @@ export class Podcast extends Component {
           <Button
             className={classes.showMoreButton}
             onClick={this.handleShowMore}
+            color="primary"
           >
             Show more
           </Button>
