@@ -61,7 +61,7 @@ const SearchBar = ({
       <form onSubmit={handleSearchSubmit}>
         <InputBase
           id="search"
-          placeholder="Search"
+          placeholder="Search podcasts"
           classes={{
             root: classes.inputRoot,
             input: classes.inputInput
