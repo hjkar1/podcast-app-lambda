@@ -3,7 +3,7 @@ A simple podcast player app that enables searching podcasts from iTunes and play
 
 The podcast search uses [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/).
 
-The podcast rss feed fetching and parsing is done using a serverless AWS lambda function via [Netlify](https://docs.netlify.com/functions/overview/).
+The podcast rss feed fetching and parsing is done using a serverless AWS lambda function via [Netlify](https://docs.netlify.com/functions/overview/) to avoid CORS issues and the use of a proxy server.
 
 ## Prerequisites
 You need to have npm and Node.js installed to run this app on your computer.
