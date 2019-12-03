@@ -17,7 +17,7 @@ test('displays search result', async () => {
     <PodcastSearch />
   );
 
-  const searchInput = getByPlaceholderText('Search');
+  const searchInput = getByPlaceholderText('Search podcasts');
   const searchForm = getByRole('form');
   fireEvent.change(searchInput, { target: { value: 'testing' } });
   fireEvent.submit(searchForm);

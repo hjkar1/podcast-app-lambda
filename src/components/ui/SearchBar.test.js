@@ -30,7 +30,7 @@ test('forwards the entered search term to parent component', () => {
     <Wrapper onSubmit={onSubmit} state={state} />
   );
 
-  const input = getByPlaceholderText('Search');
+  const input = getByPlaceholderText('Search podcasts');
   const form = getByRole('form');
 
   fireEvent.change(input, {
